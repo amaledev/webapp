@@ -14,7 +14,6 @@ public class ProductRestController {
         productService = theProductService;
     }
 
-    //add mapping for post /products - add new products
     @PostMapping("/products")
     public Product saveInDB(@RequestBody Product theProduct) {
 
@@ -25,10 +24,8 @@ public class ProductRestController {
         return theProduct;
     }
 
-    //add mapping for get /products - get products value average
     @GetMapping("/average")
     public double avgPrice(@RequestParam float minWeight, @RequestParam float maxWeight) {
-
         return productService.avgPrice(minWeight, maxWeight);
     }
 }
